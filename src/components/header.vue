@@ -33,9 +33,17 @@
   }
 </script>
 <style>
-  .header>img{
-    display:block;
+  .header{
     width:100%;
+    background-color: white;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:100;
+  }
+  .header>img{
+    width:100%;
+    display:block;
     height:55px;
   }
   .headerMiddle{
@@ -43,20 +51,20 @@
     height:41px;
     box-sizing:border-box;
     padding:8px 0;
-    text-align: center;
+    /*text-align: center;*/
     font-size: 14px;
-    margin:5px 0;
+    margin:5px 0 5px 15px;
   }
   .headerMiddle>img{
     display:inline-block;
-    width:25px;
+    width:6.6666%;
     height:25px;
     vertical-align: middle;
   }
   .headerMiddle>input{
     background-color: #eee;
     border-radius: 5px;
-    width:220px;
+    width:58%;
     height:25px;
     margin-left:10px;
   }
@@ -65,7 +73,7 @@
     height:36px;
     /*overflow-x:auto;*/
     /*overflow-y: hidden;*/
-    position:relative;
+    /*position:relative;*/
   }
   .headerNav{
     width:525px;

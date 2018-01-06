@@ -1,6 +1,5 @@
 <template>
     <div>
-      <header_content/>
       <div>
         <router-view></router-view>
       </div>
@@ -22,22 +21,23 @@
 </template>
 <script>
   import svgImage from '../svg/svg_image.vue'
-  import header from './header.vue'
-  export default {
-    components:{
-      'header_content':header
-    }
-  }
+  export default {}
 </script>
 <style>
+  /*html,body{*/
+    /*width:100%;*/
+    /*height:100%;*/
+    /*overflow: hidden;*/
+  /*}*/
   .footer{
     width:100%;
-    height:55px;
+    height:47px;
     position:fixed;
     bottom:0;
     left:0;
     list-style: none;
-    /*background-color: red;*/
+    background-color: white;
+    z-index:100;
   }
   .footer li{
     width:93px;
