@@ -30,19 +30,115 @@
         </ul>
       </div>
       <div class="rightList" ref="rightList">
-        <div class="firstList">
-          <a href="#">热门分类</a>
-          <ul>
-            <li>
-              <a href="#"><img src="../../imgs/7.jpg"></a>
-            </li>
-          </ul>
+        <div class="rightListWrap">
+          <div class="firstList li1">
+            <a href="#">热门分类</a>
+            <ul>
+              <li>
+                <a href="#">
+                  <img src="../../imgs/7.jpg">
+                  <p>国产狗粮</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../../imgs/7.jpg">
+                  <p>国产狗粮</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../../imgs/7.jpg">
+                  <p>国产狗粮</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../../imgs/7.jpg">
+                  <p>国产狗粮</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../../imgs/7.jpg">
+                  <p>国产狗粮</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="secondList li1">
+            <a href="#">热门品牌</a>
+            <ul>
+              <li>
+                <a href="#">
+                  <div class="borderD">
+                    <img src="../../imgs/7.jpg">
+                  </div>
+                  <p>麦德氏</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="borderD">
+                    <img src="../../imgs/7.jpg">
+                  </div>
+                  <p>麦德氏</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="borderD">
+                    <img src="../../imgs/7.jpg">
+                  </div>
+                  <p>麦德氏</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="borderD">
+                    <img src="../../imgs/7.jpg">
+                  </div>
+                  <p>麦德氏</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="borderD">
+                    <img src="../../imgs/7.jpg">
+                  </div>
+                  <p>麦德氏</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="borderD">
+                    <img src="../../imgs/7.jpg">
+                  </div>
+                  <p>麦德氏</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="borderD">
+                    <img src="../../imgs/7.jpg">
+                  </div>
+                  <p>麦德氏</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="borderD">
+                    <img src="../../imgs/7.jpg">
+                  </div>
+                  <p>麦德氏</p>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-    <div class="rightTitle" style="display: none">
 
-    </div>
   </div>
 </template>
 <script>
@@ -50,9 +146,9 @@
   export default {
     mounted(){
       this.$nextTick(()=>{  //页面更新完
-        new BScroll(this.$refs.leftList,{click:true,scrollY:true})
-      }),
-      new BScroll(this.$refs.rightList,{click:true,scrollY:true})
+        new BScroll(this.$refs.leftList,{click:true,scrollY:true});
+        new BScroll(this.$refs.rightList,{click:true,scrollY:true})
+      })
     }
   }
 </script>
@@ -64,7 +160,7 @@
   */
 
   .wrapLeftRight{
-    margin-top:40px;
+    /*margin-top:40px;*/
     width:100%;
     height:80%;
   }
@@ -84,8 +180,11 @@
   }
   .rightList{
     width:80%;
-    height:100%;
+    height:600px;
     float:left;
+  }
+  .rightList .rightListWrap{
+    width:100%;
   }
   .leftList ul{
     width:100%;
@@ -102,30 +201,77 @@
     overflow: hidden;
     text-overflow:ellipsis;
     font-size: 14px;
+
   }
-  .leftList li .active{
-    background: #f3f4f5;
-    color: #ed4044;
-  }
+  /*.leftList li .active2{*/
+    /*background: #f3f4f5;*/
+    /*color: #ed4044;*/
+  /*}*/
   .firstList{
-    height:318px;
+    height:310px;
     width:100%;
-    border-bottom:1px solid #eee;
+    border-bottom:2px solid #eee;
+    border-top:4px solid #eee;
     padding:15px 5px 20px;
     box-sizing: border-box;
   }
-  .firstList>a{
+  .li1>a{
     font-size: 14px;
+    display: block;
+    width:100%;
+    height:19px;
+    margin-top:10px;
   }
-  .firstList ul{
-    width:200%;
+  .li1 ul{
+    width:100%;
     height:100%;
   }
   .firstList ul li{
     float:left;
+    width:30%;
+    height:50%;
+  }
+  .li1 ul li>a{
+    display: block;
+    width:100%;
+    height:100%;
   }
   .firstList ul li img{
     width:86px;
     height:86px;
+  }
+  .li1 ul li p{
+    height:20px;
+    width:100%;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+  }
+  .secondList{
+    width:100%;
+    padding:15px 5px 20px;
+    box-sizing: border-box;
+  }
+  .secondList ul li{
+    float:left;
+    width:45%;
+    height:45%;
+    margin-right:5%;
+  }
+  .secondList ul li>a{
+    display: block;
+    width:100%;
+    height:100%;
+  }
+  .secondList ul li img{
+    width:80px;
+    height:50px;
+    display: block;
+    margin:29px auto;
+  }
+  .borderD{
+    width:100%;
+    height:70%;
+    border:2px solid #eee;
   }
 </style>

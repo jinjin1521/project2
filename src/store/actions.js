@@ -8,6 +8,7 @@ export default {
       const result = response.data  // {code:0, data: seller}
       if (result.code === 0) {
         const home = result.data
+        console.log(home)
         commit("GET_HOME", {home})
         cb&&cb()
       }

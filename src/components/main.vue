@@ -1,33 +1,36 @@
 <template>
+  <div>
     <div ref="shouyeScroll">
       <header_content/>
       <div class="carousel">
         <!--<img src="../imgs/22.jpg" alt="22">-->
         <!--<ul>-->
-          <!--<li><a href="#"><img src="../imgs/22.jpg" alt="22"></a></li>-->
-          <!--<li><a href="#"><img src="../imgs/23.jpg" alt="23"></a></li>-->
-          <!--<li><a href="#"><img src="../imgs/25.jpg" alt="25"></a></li>-->
-          <!--<li><a href="#"><img src="../imgs/26.jpg" alt="26"></a></li>-->
-          <!--<li><a href="#"><img src="../imgs/27.jpg" alt="27"></a></li>-->
-          <!--<li><a href="#"><img src="../imgs/29.jpg" alt="28"></a></li>-->
-          <mt-swipe :auto="2000">
-            <mt-swipe-item><img src="../imgs/23.jpg" alt="23"></mt-swipe-item>
-            <mt-swipe-item><img src="../imgs/25.jpg" alt="25"></mt-swipe-item>
-            <mt-swipe-item><img src="../imgs/26.jpg" alt="26"></mt-swipe-item>
-            <mt-swipe-item><img src="../imgs/27.jpg" alt="23"></mt-swipe-item>
-            <mt-swipe-item><img src="../imgs/29.jpg" alt="25"></mt-swipe-item>
-            <mt-swipe-item><img src="../imgs/30.jpg" alt="26"></mt-swipe-item>
-          </mt-swipe>
+        <!--<li><a href="#"><img src="../imgs/22.jpg" alt="22"></a></li>-->
+        <!--<li><a href="#"><img src="../imgs/23.jpg" alt="23"></a></li>-->
+        <!--<li><a href="#"><img src="../imgs/25.jpg" alt="25"></a></li>-->
+        <!--<li><a href="#"><img src="../imgs/26.jpg" alt="26"></a></li>-->
+        <!--<li><a href="#"><img src="../imgs/27.jpg" alt="27"></a></li>-->
+        <!--<li><a href="#"><img src="../imgs/29.jpg" alt="28"></a></li>-->
+        <mt-swipe :auto="2000">
+          <mt-swipe-item>
+            <img src="../imgs/22.jpg">
+          </mt-swipe-item>
+          <mt-swipe-item><img src="../imgs/25.jpg" alt="25"></mt-swipe-item>
+          <mt-swipe-item><img src="../imgs/26.jpg" alt="26"></mt-swipe-item>
+          <mt-swipe-item><img src="../imgs/27.jpg" alt="23"></mt-swipe-item>
+          <mt-swipe-item><img src="../imgs/29.jpg" alt="25"></mt-swipe-item>
+          <mt-swipe-item><img src="../imgs/30.jpg" alt="26"></mt-swipe-item>
+        </mt-swipe>
         <!--</ul>-->
         <!--<div class="pointC">-->
-          <!--<div class="point">-->
-            <!--<span></span>-->
-            <!--<span></span>-->
-            <!--<span></span>-->
-            <!--<span></span>-->
-            <!--<span></span>-->
-            <!--<span></span>-->
-          <!--</div>-->
+        <!--<div class="point">-->
+        <!--<span></span>-->
+        <!--<span></span>-->
+        <!--<span></span>-->
+        <!--<span></span>-->
+        <!--<span></span>-->
+        <!--<span></span>-->
+        <!--</div>-->
         <!--</div>-->
       </div>
       <smallIcon/>
@@ -154,17 +157,30 @@
         </ul>
       </div>
     </div>
+    <div>
+      <router-link to="/main/changeStation"><div class="changeStation"></div></router-link>
+    </div>
+    <div>
+      <router-view></router-view>
+    </div>
+  </div>
 </template>
 <script>
+//  import {mapState} from 'vuex'
   import BScroll from 'better-scroll'
   import header from './header.vue'
   import smallIcon from './mainPage/smallIcon.vue'
+
   export default {
     mounted(){
-      new BScroll(this.$refs.surpriseContent,{click:true,scrollX:true});
+        new BScroll(this.$refs.surpriseContent, {click: true, scrollX: true});
 //      new BScroll(this.$refs.shouyeScroll,{click:true,scrollY:true});
+      this.$store.dispatch('getHome')
     },
-    components:{smallIcon,'header_content':header}
+    components:{smallIcon,'header_content':header},
+//    computed:{
+//      ...mapState(['home'])
+//    }
 //    data(){
 //
 //    },
@@ -318,6 +334,25 @@
   }
   .sCItem a p{
     width:84.5px;
-
   }
+  .changeStation{
+    position:fixed;
+    right:0;
+    bottom:100px;
+    width:41px;
+    height:46px;
+    background-image: url("../imgs/gocat.png");
+    background-repeat: no-repeat;
+    background-size:200% 100%;
+    animation: this 2s steps(2) infinite;
+  }
+  @keyframes this{
+    from{
+      background-position:0 center;
+    }
+    to{
+      background-position:205% center;
+    }
+  }
+
 </style>

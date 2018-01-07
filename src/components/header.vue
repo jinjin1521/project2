@@ -9,26 +9,26 @@
           <input type="text" placeholder="搜索商品和品牌">
           <img src="../imgs/mydope.png" alt="mydope">
         </div>
-        <div class="ulNav" ref="ulNav" style="width:100%">
-            <ul class="headerNav" >
-              <li><a href="#">首页</a></li>
-              <li><a href="#">服饰城</a></li>
-              <li><a href="#">狗狗主粮</a></li>
-              <li><a href="#">医疗保健</a></li>
-              <li><a href="#">零食玩具</a></li>
-              <li><a href="#">日用外出</a></li>
-              <li><a href="#">美容香波</a></li>
+        <div class="ulNav" ref="ulNav" style="width:100%" v-if="home">
+            <ul class="headerNav">
+              <li v-for="(meun, index) in home.menus" :key="index">
+                <a href="###">{{meun.menu_name}}</a>
+              </li>
             </ul>
         </div>
-        <!--<div class="line"></div>-->
       </div>
     </div>
 </template>
 <script>
   import BScroll from 'better-scroll'
+  import {mapState} from 'vuex'
   export default {
     mounted(){
       new BScroll(this.$refs.ulNav,{click:true,scrollX:true})
+      this.$store.dispatch('getHome')
+    },
+    computed:{
+      ...mapState(['home'])
     }
   }
 </script>

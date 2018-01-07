@@ -2,21 +2,22 @@
     <div class="selectPage">
       <div class="selectHeader">
         <div class="selector1">
-          <a href="#"><span class="active">分类</span></a>
+          <router-link to="/select/selectNext"><span class="active">分类</span></router-link>
         </div>
         <div class="brand1">
-          <a href="#"><span>品牌</span></a>
+          <router-link to="/select/brand"><span>品牌</span></router-link>
         </div>
+        <a class="selectS" href="#">
+          <img src="../imgs/search.png" alt="">
+        </a>
       </div>
-      <selectNext/>
+      <div>
+        <router-view class="propsList"></router-view>
+      </div>
     </div>
 </template>
 <script>
-
-  import selectNext from './select-components/selectNext.vue'
-  export default {
-    components:{selectNext}
-  }
+  export default {}
 </script>
 <style>
   html,body{
@@ -68,5 +69,19 @@
     color: #ed4044;
     border-bottom: 2px solid #ed4044;
   }
-
+  .propsList{
+    margin-top:40px;
+  }
+  .selectS{
+    display: block;
+    width:15px;
+    height:15px;
+    position:absolute;
+    top:13px;
+    right:13px;
+  }
+  .selectS img{
+    width:100%;
+    height:100%;
+  }
 </style>
