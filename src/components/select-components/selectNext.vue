@@ -1,45 +1,23 @@
 <template>
   <div class="wrapLeftRight">
     <div class="leftTitle">
-      <div class="leftList" ref="leftList">
+      <div class="leftList" ref="leftList" v-if="select.categorys">
         <ul>
-          <li class="active">为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
-          <li>为您推荐</li>
+          <li v-for="(category , index) in select.categorys">{{category.name}}</li>
+          <li></li>
         </ul>
       </div>
       <div class="rightList" ref="rightList">
         <div class="rightListWrap">
-          <div class="firstList li1">
-            <a href="#">热门分类</a>
+          <div class="firstList li1" v-if="select.cate_list[0].list">
+            <a href="#">{{select.cate_list[0].title}}</a>
             <ul>
-              <li>
-                <a href="#">
-                  <img src="../../imgs/7.jpg">
-                  <p>国产狗粮</p>
-                </a>
-              </li>
+              <!--<li v-for="(listItem,index)in select.cate_list[0].list" :key="index">-->
+                <!--<a href="#">-->
+                  <!--<img :src="listItem.photo">-->
+                  <!--<p>{{listItem.name}}</p>-->
+                <!--</a>-->
+              <!--</li>-->
               <li>
                 <a href="#">
                   <img src="../../imgs/7.jpg">
@@ -138,17 +116,24 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 <script>
+  import {mapState} from 'vuex'
   import BScroll from 'better-scroll'
   export default {
     mounted(){
-      this.$nextTick(()=>{  //页面更新完
-        new BScroll(this.$refs.leftList,{click:true,scrollY:true});
-        new BScroll(this.$refs.rightList,{click:true,scrollY:true})
-      })
+
+      this.$store.dispatch('getSelect',()=>{
+        this.$nextTick(()=>{  //页面更新完
+          new BScroll(this.$refs.leftList,{click:true,scrollY:true});
+          new BScroll(this.$refs.rightList,{click:true,scrollY:true})
+        });
+      }),
+        this.$store.dispatch('getSelect')
+    },
+    computed:{
+      ...mapState(['select'])
     }
   }
 </script>
@@ -172,7 +157,7 @@
   }
   .leftList{
     width:19%;
-    height:600px;
+    height:700px;
     /*具体看li*/
     margin-right:1%;
     /*background-color: blue;*/
@@ -180,15 +165,17 @@
   }
   .rightList{
     width:80%;
-    height:600px;
+    height:700px;
     float:left;
+    overflow:hidden;
   }
   .rightList .rightListWrap{
     width:100%;
+    height:800px;
   }
   .leftList ul{
     width:100%;
-    /*height:100%;*/
+    height:600px;
     border-right:3px solid #eee;
   }
   .leftList li{

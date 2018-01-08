@@ -1,31 +1,19 @@
 <template>
     <div>
-        <div class="smallIcon" style="width: 100%">
+        <div class="smallIcon" style="width: 100%" v-if="home.datas">
           <ul>
-            <li v-for="(img,index) in imgs" :key="index" style="width: 20%">
-              <a href="#"><img :src="img"></a>
+            <li v-for="(img,index) in home.datas[1].menus" :key="index" style="width: 20%">
+              <a href="#"><img :src="img.image"></a>
             </li>
           </ul>
         </div>
     </div>
 </template>
 <script>
+  import {mapState} from 'vuex'
   export default {
-    data(){
-      return{
-        imgs:[
-          'https://img1.epetbar.com/2017-12/13/21/de2bc9261bf6ebfc241f24133b854474.jpg@!water',
-          'https://img1.epetbar.com/2017-12/13/21/de2bc9261bf6ebfc241f24133b854474.jpg@!water',
-          'https://img1.epetbar.com/2017-12/13/21/de2bc9261bf6ebfc241f24133b854474.jpg@!water',
-          'https://img1.epetbar.com/2017-12/13/21/de2bc9261bf6ebfc241f24133b854474.jpg@!water',
-          'https://img1.epetbar.com/2017-12/13/21/de2bc9261bf6ebfc241f24133b854474.jpg@!water',
-          'https://img1.epetbar.com/2017-12/13/21/de2bc9261bf6ebfc241f24133b854474.jpg@!water',
-          'https://img1.epetbar.com/2017-12/13/21/de2bc9261bf6ebfc241f24133b854474.jpg@!water',
-          'https://img1.epetbar.com/2017-12/13/21/de2bc9261bf6ebfc241f24133b854474.jpg@!water',
-          'https://img1.epetbar.com/2017-12/13/21/de2bc9261bf6ebfc241f24133b854474.jpg@!water',
-          'https://img1.epetbar.com/2017-12/13/21/de2bc9261bf6ebfc241f24133b854474.jpg@!water'
-        ]
-      }
+    computed:{
+      ...mapState(['home'])
     }
   }
 </script>

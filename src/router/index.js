@@ -8,6 +8,7 @@ import unFound from '../components/unFound.vue'
 import selectNext from '../components/select-components/selectNext.vue'
 import brand from '../components/select-components/brand.vue'
 import changeStation from '../components/mainPage/changeStation.vue'
+import dog from '../components/mainPage/dog.vue'
 
 Vue.use(VueRouter)
 
@@ -25,6 +26,10 @@ export default new VueRouter({
         {
           path:'/main/changeStation',
           component:changeStation
+        },
+        {
+          path:'/main/dog',
+          component:dog
         }
       ]
     },

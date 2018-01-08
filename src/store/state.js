@@ -1,3 +1,4 @@
 export default {
-  home:null
+  home:{},
+  select:{}
 }

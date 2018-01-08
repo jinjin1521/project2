@@ -2,7 +2,7 @@
   <div>
     <div ref="shouyeScroll">
       <header_content/>
-      <div class="carousel">
+      <div class="carousel" :style="{marginTop:marginTop}">
         <!--<img src="../imgs/22.jpg" alt="22">-->
         <!--<ul>-->
         <!--<li><a href="#"><img src="../imgs/22.jpg" alt="22"></a></li>-->
@@ -11,15 +11,15 @@
         <!--<li><a href="#"><img src="../imgs/26.jpg" alt="26"></a></li>-->
         <!--<li><a href="#"><img src="../imgs/27.jpg" alt="27"></a></li>-->
         <!--<li><a href="#"><img src="../imgs/29.jpg" alt="28"></a></li>-->
-        <mt-swipe :auto="2000">
-          <mt-swipe-item>
-            <img src="../imgs/22.jpg">
+        <mt-swipe :auto="2000" v-if="home.datas">
+          <mt-swipe-item v-for="(image,index) in home.datas[0].value" :key="index">
+            <img :src="image.image">
           </mt-swipe-item>
-          <mt-swipe-item><img src="../imgs/25.jpg" alt="25"></mt-swipe-item>
-          <mt-swipe-item><img src="../imgs/26.jpg" alt="26"></mt-swipe-item>
-          <mt-swipe-item><img src="../imgs/27.jpg" alt="23"></mt-swipe-item>
-          <mt-swipe-item><img src="../imgs/29.jpg" alt="25"></mt-swipe-item>
-          <mt-swipe-item><img src="../imgs/30.jpg" alt="26"></mt-swipe-item>
+          <!--<mt-swipe-item><img src="../imgs/25.jpg" alt="25"></mt-swipe-item>-->
+          <!--<mt-swipe-item><img src="../imgs/26.jpg" alt="26"></mt-swipe-item>-->
+          <!--<mt-swipe-item><img src="../imgs/27.jpg" alt="23"></mt-swipe-item>-->
+          <!--<mt-swipe-item><img src="../imgs/29.jpg" alt="25"></mt-swipe-item>-->
+          <!--<mt-swipe-item><img src="../imgs/30.jpg" alt="26"></mt-swipe-item>-->
         </mt-swipe>
         <!--</ul>-->
         <!--<div class="pointC">-->
@@ -166,8 +166,9 @@
   </div>
 </template>
 <script>
-//  import {mapState} from 'vuex'
+  import {mapState} from 'vuex'
   import BScroll from 'better-scroll'
+  import PubSub from 'pubsub-js'
   import header from './header.vue'
   import smallIcon from './mainPage/smallIcon.vue'
 
@@ -175,15 +176,21 @@
     mounted(){
         new BScroll(this.$refs.surpriseContent, {click: true, scrollX: true});
 //      new BScroll(this.$refs.shouyeScroll,{click:true,scrollY:true});
-      this.$store.dispatch('getHome')
+      this.$store.dispatch('getHome');
+      PubSub.subscribe('close',(msg,closeImg)=>{
+        this.marginTop= 86 + 'px'
+        console.log(closeImg)    //closeImg:从publish处传过来的图片地址
+      })
     },
     components:{smallIcon,'header_content':header},
-//    computed:{
-//      ...mapState(['home'])
-//    }
-//    data(){
-//
-//    },
+    computed:{
+      ...mapState(['home'])
+    },
+    data(){
+      return{
+        marginTop:''
+      }
+    },
 //    mounted(){
 //      setInterval(() => {
 //
