@@ -1,35 +1,44 @@
 <template>
   <div>
-    <div class="stationImg">
-      <div class="main">
-        <p class="ftc c999 ft16 rela">DOG<b class="b-line c000 ft12">▁</b></p>
-        <p class="ftc mt20  c666">亲爱的小主</p>
-        <p class="ftc c333 ft20">您即将进入<span>狗狗站</span></p>
-        <ul class="clearfix ftc change-ul">
-          <li type="cat" class="fl pet1 cat">
-            <img src="//static.epetbar.com/static_web/wap/src/images/change-cat.png">
-            <div class="pet1name">猫猫站</div>
-          </li>
-          <li type="dog" class="fl pet2 mainpet rela dog">
-            <img src="//static.epetbar.com/static_web/wap/src/images/change-dog1.png">
-            <div>狗狗站</div>
-            <b class="current-line c000 ft12">▁</b>
-            <a href="javascript:;" class="cfff ft14 ftc once-into mt15 dib">立即进入</a>
-          </li>
-          <li type="fish" class="fl pet3 fish">
-            <img src="//static.epetbar.com/static_web/wap/src/images/change-fish.png">
-            <div class="pet3name">水族站</div>
-          </li>
-        </ul>
+    <transition name="fade">
+      <div class="stationImg">
+        <div class="main">
+          <p class="ftc c999 ft16 rela">DOG<b class="b-line c000 ft12">▁</b></p>
+          <p class="ftc mt20  c666">亲爱的小主</p>
+          <p class="ftc c333 ft20">您即将进入<span>狗狗站</span></p>
+          <ul class="clearfix ftc change-ul">
+            <li type="cat" class="fl pet1 cat">
+              <img src="//static.epetbar.com/static_web/wap/src/images/change-cat.png">
+              <div class="pet1name">猫猫站</div>
+            </li>
+            <li type="dog" class="fl pet2 mainpet rela dog">
+              <img src="//static.epetbar.com/static_web/wap/src/images/change-dog1.png">
+              <div>狗狗站</div>
+              <b class="current-line c000 ft12">▁</b>
+              <a href="javascript:;" class="cfff ft14 ftc once-into mt15 dib">立即进入</a>
+            </li>
+            <li type="fish" class="fl pet3 fish">
+              <img src="//static.epetbar.com/static_web/wap/src/images/change-fish.png">
+              <div class="pet3name">水族站</div>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <router-link to="/main">
-      <div class="close"><img src="../../imgs/close3.png"></div>
-    </router-link>
+    </transition>
+    <div class="close" @click="close"><img src="../../imgs/close3.png"></div>
+    <!--<router-link to="/main">-->
+      <!--<div class="close"><img src="../../imgs/close3.png"></div>-->
+    <!--</router-link>-->
   </div>
 </template>
 <script>
-  export default {}
+  export default {
+    methods:{
+      close(){
+        this.$router.back(1)
+      }
+    }
+  }
 </script>
 <style>
   html, body {
@@ -37,7 +46,6 @@
     height: 100%;
     overflow: hidden;
   }
-
   .stationImg {
     z-index: 666;
     width: 100%;
@@ -47,6 +55,13 @@
     top: 0;
     left: 0;
   }
+  .fade-enter-active,.fade-leave-active{
+    transition:opacity 7s;
+  }
+  .fade-enter,.fade-leave-to{
+    opacity:0
+  }
+
   .close {
     position: fixed;
     bottom: 20px;
@@ -68,7 +83,10 @@
   }
   .ftc {
     text-align: center;
-  . c999 color: #999;
+  }
+  .c999
+  {
+    color: #999;
   }
 
   .rela {

@@ -3,45 +3,44 @@
     <div class="leftTitle">
       <div class="leftList" ref="leftList" v-if="select.categorys">
         <ul>
-          <li v-for="(category , index) in select.categorys">{{category.name}}</li>
-          <li></li>
+          <li v-for="(category , index) in select.categorys" :key="index">{{category.name}}</li>
         </ul>
       </div>
       <div class="rightList" ref="rightList">
         <div class="rightListWrap">
-          <div class="firstList li1" v-if="select.cate_list[0].list">
-            <a href="#">{{select.cate_list[0].title}}</a>
+          <div class="firstList li1" v-if="select.cate_list">
+            <a href="#">{{select.cate_list.title}}</a>
             <ul>
-              <!--<li v-for="(listItem,index)in select.cate_list[0].list" :key="index">-->
+              <li v-for="(item,index) in select.cate_list[0].list" :key="index">
+                <a href="#">
+                  <img :src="item.photo">
+                  <p>{{item.name}}</p>
+                </a>
+              </li>
+              <!--<li>-->
                 <!--<a href="#">-->
-                  <!--<img :src="listItem.photo">-->
-                  <!--<p>{{listItem.name}}</p>-->
+                  <!--<img src="../../imgs/7.jpg">-->
+                  <!--<p>国产狗粮</p>-->
                 <!--</a>-->
               <!--</li>-->
-              <li>
-                <a href="#">
-                  <img src="../../imgs/7.jpg">
-                  <p>国产狗粮</p>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="../../imgs/7.jpg">
-                  <p>国产狗粮</p>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="../../imgs/7.jpg">
-                  <p>国产狗粮</p>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="../../imgs/7.jpg">
-                  <p>国产狗粮</p>
-                </a>
-              </li>
+              <!--<li>-->
+                <!--<a href="#">-->
+                  <!--<img src="../../imgs/7.jpg">-->
+                  <!--<p>国产狗粮</p>-->
+                <!--</a>-->
+              <!--</li>-->
+              <!--<li>-->
+                <!--<a href="#">-->
+                  <!--<img src="../../imgs/7.jpg">-->
+                  <!--<p>国产狗粮</p>-->
+                <!--</a>-->
+              <!--</li>-->
+              <!--<li>-->
+                <!--<a href="#">-->
+                  <!--<img src="../../imgs/7.jpg">-->
+                  <!--<p>国产狗粮</p>-->
+                <!--</a>-->
+              <!--</li>-->
             </ul>
           </div>
           <div class="secondList li1">
@@ -55,63 +54,67 @@
                   <p>麦德氏</p>
                 </a>
               </li>
-              <li>
-                <a href="#">
-                  <div class="borderD">
-                    <img src="../../imgs/7.jpg">
-                  </div>
-                  <p>麦德氏</p>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="borderD">
-                    <img src="../../imgs/7.jpg">
-                  </div>
-                  <p>麦德氏</p>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="borderD">
-                    <img src="../../imgs/7.jpg">
-                  </div>
-                  <p>麦德氏</p>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="borderD">
-                    <img src="../../imgs/7.jpg">
-                  </div>
-                  <p>麦德氏</p>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="borderD">
-                    <img src="../../imgs/7.jpg">
-                  </div>
-                  <p>麦德氏</p>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="borderD">
-                    <img src="../../imgs/7.jpg">
-                  </div>
-                  <p>麦德氏</p>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="borderD">
-                    <img src="../../imgs/7.jpg">
-                  </div>
-                  <p>麦德氏</p>
-                </a>
-              </li>
+              <!--<li>-->
+                <!--<a href="#">-->
+                  <!--<div class="borderD">-->
+                    <!--<img src="../../imgs/7.jpg">-->
+                  <!--</div>-->
+                  <!--<p>麦德氏</p>-->
+                <!--</a>-->
+              <!--</li>-->
+              <!--<li>-->
+                <!--<a href="#">-->
+                  <!--<div class="borderD">-->
+                    <!--<img src="../../imgs/7.jpg">-->
+                  <!--</div>-->
+                  <!--<p>麦德氏</p>-->
+                <!--</a>-->
+              <!--</li>-->
+              <!--<li>-->
+                <!--<a href="#">-->
+                  <!--<div class="borderD">-->
+                    <!--<img src="../../imgs/7.jpg">-->
+                  <!--</div>-->
+                  <!--<p>麦德氏</p>-->
+                <!--</a>-->
+              <!--</li>-->
+              <!--<li>-->
+                <!--<a href="#">-->
+                  <!--<div class="borderD">-->
+                    <!--<img src="../../imgs/7.jpg">-->
+                  <!--</div>-->
+                  <!--<p>麦德氏</p>-->
+                <!--</a>-->
+              <!--</li>-->
+              <!--<li>-->
+                <!--<a href="#">-->
+                  <!--<div class="borderD">-->
+                    <!--<img src="../../imgs/7.jpg">-->
+                  <!--</div>-->
+                  <!--<p>麦德氏</p>-->
+                <!--</a>-->
+              <!--</li>-->
+              <!--<li>-->
+                <!--<a href="#">-->
+                  <!--<div class="borderD">-->
+                    <!--<img src="../../imgs/7.jpg">-->
+                  <!--</div>-->
+                  <!--<p>麦德氏</p>-->
+                <!--</a>-->
+              <!--</li>-->
+              <!--<li>-->
+                <!--<a href="#">-->
+                  <!--<div class="borderD">-->
+                    <!--<img src="../../imgs/7.jpg">-->
+                  <!--</div>-->
+                  <!--<p>麦德氏</p>-->
+                <!--</a>-->
+              <!--</li>-->
+              <li></li>
+              <li></li>
+              <li></li>
             </ul>
+            <div class="empty"></div>
           </div>
         </div>
       </div>
@@ -123,14 +126,12 @@
   import BScroll from 'better-scroll'
   export default {
     mounted(){
-
       this.$store.dispatch('getSelect',()=>{
         this.$nextTick(()=>{  //页面更新完
-          new BScroll(this.$refs.leftList,{click:true,scrollY:true});
+          new BScroll(this.$refs.leftList,{click:true});
           new BScroll(this.$refs.rightList,{click:true,scrollY:true})
         });
-      }),
-        this.$store.dispatch('getSelect')
+      })
     },
     computed:{
       ...mapState(['select'])
@@ -143,7 +144,6 @@
     width: 0;
     height: 0;}
   */
-
   .wrapLeftRight{
     /*margin-top:40px;*/
     width:100%;
@@ -162,21 +162,23 @@
     margin-right:1%;
     /*background-color: blue;*/
     float:left;
+    /*overflow:hidden;*/
   }
   .rightList{
     width:80%;
     height:700px;
     float:left;
-    overflow:hidden;
+    /*overflow:hidden;*/
   }
   .rightList .rightListWrap{
     width:100%;
-    height:800px;
+    height:900px;
   }
   .leftList ul{
     width:100%;
-    height:600px;
+    height:800px;
     border-right:3px solid #eee;
+    padding-bottom:132px;
   }
   .leftList li{
     height:50px;

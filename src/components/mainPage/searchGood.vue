@@ -1,17 +1,16 @@
 <template>
     <div class="routerView">
       <div class="back" @click="back"><b><</b></div>
-        dog....
+      searchGood...
     </div>
 </template>
 <script>
   export default {
     methods:{
       back(){
-        this.$router.back()
+        this.$router.go(-1)
       }
     }
-
   }
 </script>
 <style>

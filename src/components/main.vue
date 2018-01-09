@@ -38,124 +38,128 @@
       <div class="newPeople">
         <a href="#"><img src="../imgs/11.gif" alt=""></a>
       </div>
-      <div class="surprise">
+      <div class="surprise" v-if="home.datas">
         <div class="crazy">
-          <img src="../imgs/suprice.png" alt="">
+          <img src="../imgs/suprice.png">
         </div>
-        <div class="timeDis">距离下一场</div>
-        <div class="time"></div>
+        <div class="timeDis">{{home.datas[2].discounts.title}}</div>
+        <div class="timeDis">
+          <countDown :endTime="home.datas[2].discounts.time"/>
+        </div>
         <div class="moreChines">
           <a href="#"><img src="../imgs/54.jpg"></a>
         </div>
       </div>
-      <div class="surpriseContent" ref="surpriseContent">
+      <div class="surpriseContent" ref="surpriseContent" v-if="home.datas">
         <ul class="sC">
-          <li class="sCItem">
+          <li class="sCItem" v-for="(good,index) in home.datas[2].discounts.goods">
             <a href="#">
               <div class="picture">
-                <img src="../imgs/19.jpg">
+                <img :src="good.image.image">
               </div>
               <div class="price">
                 <span>￥</span>
-                <span>3.90</span>
+                <span>{{good.sale_price}}</span>
               </div>
-              <p>省￥35.10</p>
+              <p>{{good.little_price}}</p>
             </a>
-
           </li>
-          <li class="sCItem">
-            <a href="#">
-              <div class="picture">
-                <img src="../imgs/19.jpg">
-              </div>
-              <div class="price">
-                <span>￥</span>
-                <span>3.90</span>
-              </div>
-              <p>省￥35.10</p>
-            </a>
+          <li></li>
+          <!--<li class="sCItem">-->
+            <!--<a href="#">-->
+              <!--<div class="picture">-->
+                <!--<img src="../imgs/19.jpg">-->
+              <!--</div>-->
+              <!--<div class="price">-->
+                <!--<span>￥</span>-->
+                <!--<span>3.90</span>-->
+              <!--</div>-->
+              <!--<p>省￥35.10</p>-->
+            <!--</a>-->
 
-          </li>
-          <li class="sCItem">
-            <a href="#">
-              <div class="picture">
-                <img src="../imgs/19.jpg">
-              </div>
-              <div class="price">
-                <span>￥</span>
-                <span>3.90</span>
-              </div>
-              <p>省￥35.10</p>
-            </a>
+          <!--</li>-->
+          <!--<li class="sCItem">-->
+            <!--<a href="#">-->
+              <!--<div class="picture">-->
+                <!--<img src="../imgs/19.jpg">-->
+              <!--</div>-->
+              <!--<div class="price">-->
+                <!--<span>￥</span>-->
+                <!--<span>3.90</span>-->
+              <!--</div>-->
+              <!--<p>省￥35.10</p>-->
+            <!--</a>-->
 
-          </li>
-          <li class="sCItem">
-            <a href="#">
-              <div class="picture">
-                <img src="../imgs/19.jpg">
-              </div>
-              <div class="price">
-                <span>￥</span>
-                <span>3.90</span>
-              </div>
-              <p>省￥35.10</p>
-            </a>
+          <!--</li>-->
+          <!--<li class="sCItem">-->
+            <!--<a href="#">-->
+              <!--<div class="picture">-->
+                <!--<img src="../imgs/19.jpg">-->
+              <!--</div>-->
+              <!--<div class="price">-->
+                <!--<span>￥</span>-->
+                <!--<span>3.90</span>-->
+              <!--</div>-->
+              <!--<p>省￥35.10</p>-->
+            <!--</a>-->
 
-          </li>
-          <li class="sCItem">
-            <a href="#">
-              <div class="picture">
-                <img src="../imgs/19.jpg">
-              </div>
-              <div class="price">
-                <span>￥</span>
-                <span>3.90</span>
-              </div>
-              <p>省￥35.10</p>
-            </a>
+          <!--</li>-->
+          <!--<li class="sCItem">-->
+            <!--<a href="#">-->
+              <!--<div class="picture">-->
+                <!--<img src="../imgs/19.jpg">-->
+              <!--</div>-->
+              <!--<div class="price">-->
+                <!--<span>￥</span>-->
+                <!--<span>3.90</span>-->
+              <!--</div>-->
+              <!--<p>省￥35.10</p>-->
+            <!--</a>-->
 
-          </li>
-          <li class="sCItem">
-            <a href="#">
-              <div class="picture">
-                <img src="../imgs/19.jpg">
-              </div>
-              <div class="price">
-                <span>￥</span>
-                <span>3.90</span>
-              </div>
-              <p>省￥35.10</p>
-            </a>
+          <!--</li>-->
+          <!--<li class="sCItem">-->
+            <!--<a href="#">-->
+              <!--<div class="picture">-->
+                <!--<img src="../imgs/19.jpg">-->
+              <!--</div>-->
+              <!--<div class="price">-->
+                <!--<span>￥</span>-->
+                <!--<span>3.90</span>-->
+              <!--</div>-->
+              <!--<p>省￥35.10</p>-->
+            <!--</a>-->
 
-          </li>
-          <li class="sCItem">
-            <a href="#">
-              <div class="picture">
-                <img src="../imgs/19.jpg">
-              </div>
-              <div class="price">
-                <span>￥</span>
-                <span>3.90</span>
-              </div>
-              <p>省￥35.10</p>
-            </a>
+          <!--</li>-->
+          <!--<li class="sCItem">-->
+            <!--<a href="#">-->
+              <!--<div class="picture">-->
+                <!--<img src="../imgs/19.jpg">-->
+              <!--</div>-->
+              <!--<div class="price">-->
+                <!--<span>￥</span>-->
+                <!--<span>3.90</span>-->
+              <!--</div>-->
+              <!--<p>省￥35.10</p>-->
+            <!--</a>-->
 
-          </li>
-          <li class="sCItem">
-            <a href="#">
-              <div class="picture">
-                <img src="../imgs/19.jpg">
-              </div>
-              <div class="price">
-                <span>￥</span>
-                <span>3.90</span>
-              </div>
-              <p>省￥35.10</p>
-            </a>
+          <!--</li>-->
+          <!--<li class="sCItem">-->
+            <!--<a href="#">-->
+              <!--<div class="picture">-->
+                <!--<img src="../imgs/19.jpg">-->
+              <!--</div>-->
+              <!--<div class="price">-->
+                <!--<span>￥</span>-->
+                <!--<span>3.90</span>-->
+              <!--</div>-->
+              <!--<p>省￥35.10</p>-->
+            <!--</a>-->
 
-          </li>
+          <!--</li>-->
         </ul>
       </div>
+
+      <div>0000000<br>000000000000 <br>  00000000000000<br>0000000000000</div>
     </div>
     <div>
       <router-link to="/main/changeStation"><div class="changeStation"></div></router-link>
@@ -171,18 +175,23 @@
   import PubSub from 'pubsub-js'
   import header from './header.vue'
   import smallIcon from './mainPage/smallIcon.vue'
+  import countDown from './mainPage/countDown.vue'
 
   export default {
     mounted(){
-        new BScroll(this.$refs.surpriseContent, {click: true, scrollX: true});
-//      new BScroll(this.$refs.shouyeScroll,{click:true,scrollY:true});
-      this.$store.dispatch('getHome');
+//      new BScroll(this.$refs.surpriseContent, {click: true, scrollX: true});
+      this.$store.dispatch('getHome',()=>{
+        this.$nextTick(()=>{
+//          new BScroll(this.$refs.shouyeScroll,{click:true});
+          new BScroll(this.$refs.surpriseContent, {click: true, scrollX: true})
+        })
+      });
       PubSub.subscribe('close',(msg,closeImg)=>{
         this.marginTop= 86 + 'px'
         console.log(closeImg)    //closeImg:从publish处传过来的图片地址
       })
     },
-    components:{smallIcon,'header_content':header},
+    components:{smallIcon,'header_content':header,countDown},
     computed:{
       ...mapState(['home'])
     },
@@ -307,7 +316,7 @@
     overflow:hidden;
   }
   .sC{
-    width:240%;
+    width:880px;
     height:100%;
   }
   .sCItem{

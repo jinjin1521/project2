@@ -12,7 +12,12 @@
             </router-link>
           </div>
           <a href="#"><img src="../imgs/search.png"></a>
-          <input type="text" placeholder="搜索商品和品牌">
+          <div class="inputRouter">
+            <router-link to="/main/searchGood">
+              <input type="text" placeholder="搜索商品和品牌"  disabled>
+            </router-link>
+          </div>
+
           <img src="../imgs/mydope.png" alt="mydope">
         </div>
         <div class="ulNav" ref="ulNav" style="width:100%" v-if="home">
@@ -23,7 +28,7 @@
             </ul>
         </div>
       </div>
-      <router-view class="routerView"></router-view>
+      <router-view></router-view>
     </div>
 </template>
 <script>
@@ -31,6 +36,11 @@
   import {mapState} from 'vuex'
   import PubSub from 'pubsub-js'
   export default {
+    data(){
+      return{
+        num:1
+      }
+    },
     mounted(){
       new BScroll(this.$refs.ulNav,{click:true,scrollX:true});
       this.$store.dispatch('getHome')
@@ -95,12 +105,16 @@
     height:25px;
     vertical-align: middle;
   }
-  .headerMiddle>input{
-    background-color: #eee;
-    border-radius: 5px;
+  .headerMiddle .inputRouter{
+    display: inline-block;
     width:58%;
     height:25px;
     margin-left:10px;
+  }
+  .headerMiddle input{
+    background-color: #eee;
+    border-radius: 5px;
+    width:100%;
   }
   .headerMiddle>a{
     display: block;
@@ -135,15 +149,15 @@
     color:#666;
     display:block;
   }
-  .routerView{
-    width:100%;
-    height:100%;
-    position:absolute;
-    top:0px;
-    left:0;
-    z-index: 1000;
-    background-color: white;
-  }
+  /*.routerView{*/
+    /*width:100%;*/
+    /*height:200%;*/
+    /*position:absolute;*/
+    /*top:0px;*/
+    /*left:0;*/
+    /*z-index: 1000;*/
+    /*background-color: white;*/
+  /*}*/
   /*.line{*/
     /*width:100%;*/
     /*height:8px;*/

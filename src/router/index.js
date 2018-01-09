@@ -9,6 +9,8 @@ import selectNext from '../components/select-components/selectNext.vue'
 import brand from '../components/select-components/brand.vue'
 import changeStation from '../components/mainPage/changeStation.vue'
 import dog from '../components/mainPage/dog.vue'
+import searchGood from '../components/mainPage/searchGood.vue'
+import celections from '../components/shopcarPage/celections.vue'
 
 Vue.use(VueRouter)
 
@@ -30,6 +32,10 @@ export default new VueRouter({
         {
           path:'/main/dog',
           component:dog
+        },
+        {
+          path:'/main/searchGood',
+          component:searchGood
         }
       ]
     },
@@ -53,7 +59,13 @@ export default new VueRouter({
     },
     {
       path:'/shopcar',
-      component:shopcar
+      component:shopcar,
+      children:[
+        {
+          path:'/shopcar/celections',
+          component:celections
+        }
+      ]
     },
     {
       path:'/myself',
