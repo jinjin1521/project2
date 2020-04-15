@@ -8,13 +8,13 @@
         <div class="headerMiddle">
           <div class="routerLink">
             <router-link to="/main/dog">
-              <span>狗狗站</span> | <span>重庆</span>
+              <span>狗狗站~@@@@</span> | <span>重庆@@@@@</span>
             </router-link>
           </div>
           <a href="#"><img src="../imgs/search.png"></a>
           <div class="inputRouter">
             <router-link to="/main/searchGood">
-              <input type="text" placeholder="搜索商品和品牌1111111"  disabled>
+              <input type="text" placeholder="搜索商品和品牌"  disabled>
             </router-link>
           </div>
 
