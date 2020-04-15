@@ -8,7 +8,7 @@
         <div class="headerMiddle">
           <div class="routerLink">
             <router-link to="/main/dog">
-              <span>狗狗站~~~</span> | <span>重庆~~</span>
+              <span>狗狗站###</span> | <span>重庆</span>
             </router-link>
           </div>
           <a href="#"><img src="../imgs/search.png"></a>
