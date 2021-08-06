@@ -5,6 +5,7 @@
           <span class="showOrHide" @click="showOrHide"><img src="../imgs/close3.png"></span>
           <img src="../imgs/logo.jpg" alt="logo">
         </div>
+        <div>哈哈哈哈</div>
         <div class="headerMiddle">
           <div class="routerLink">
             <router-link to="/main/dog">
